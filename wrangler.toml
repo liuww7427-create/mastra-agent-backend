@@ -1,4 +1,4 @@
-name = "mastra-agent-backend"
+name = "baby-care-backend"
 main = "src/worker.ts"
 compatibility_date = "2024-11-07"
 tsconfig = "tsconfig.worker.json"
