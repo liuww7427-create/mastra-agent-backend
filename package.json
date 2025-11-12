@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Serverless GraphQL API for the Mastra-powered mom support agent",
+  "main": "dist/handler.js",
+  "scripts": {
+    "dev": "ts-node src/localServer.ts",
+    "dev:serverless": "serverless offline --stage local",
+    "build": "serverless package",
+    "deploy": "serverless deploy",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "dependencies": {
+    "@apollo/server": "^5.1.0",
+    "@as-integrations/aws-lambda": "^4.0.1",
+    "@mastra/core": "^0.24.0",
+    "dotenv": "^17.2.3",
+    "graphql": "^16.12.0",
+    "graphql-tag": "^2.12.6"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.158",
+    "@types/node": "^24.10.1",
+    "serverless": "3",
+    "serverless-esbuild": "^1.55.1",
+    "serverless-offline": "^14.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
