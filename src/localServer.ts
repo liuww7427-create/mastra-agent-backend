@@ -6,7 +6,7 @@ import { typeDefs } from './schema';
 import { resolvers } from './resolvers';
 
 async function bootstrap() {
-  const port = Number(process.env.PORT) || 3000;
+  const port = Number(process.env.PORT) || 4000;
   const server = new ApolloServer<GraphQLContext>({
     typeDefs,
     resolvers,

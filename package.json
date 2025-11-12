@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "ts-node src/localServer.ts",
     "dev:serverless": "serverless offline --stage local",
+    "dev:worker": "wrangler dev",
     "build": "serverless package",
     "deploy": "serverless deploy",
+    "deploy:worker": "wrangler deploy",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit"
   },
@@ -18,12 +20,15 @@
   "dependencies": {
     "@apollo/server": "^5.1.0",
     "@as-integrations/aws-lambda": "^4.0.1",
+    "@graphql-tools/schema": "^10.0.29",
     "@mastra/core": "^0.24.0",
     "dotenv": "^17.2.3",
     "graphql": "^16.12.0",
-    "graphql-tag": "^2.12.6"
+    "graphql-tag": "^2.12.6",
+    "graphql-yoga": "^5.16.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251111.0",
     "@types/aws-lambda": "^8.10.158",
     "@types/node": "^24.10.1",
     "serverless": "3",

@@ -1,0 +1,7 @@
+name = "mastra-agent-backend"
+main = "src/worker.ts"
+compatibility_date = "2024-11-07"
+tsconfig = "tsconfig.worker.json"
+
+[vars]
+OPENAI_API_KEY = ""

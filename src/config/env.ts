@@ -1,10 +1,24 @@
 import { config } from 'dotenv';
 
-config();
+try {
+  config();
+} catch {
+  /* noop for edge runtimes */
+}
 
-export const env = {
-  openAiKey: process.env.OPENAI_API_KEY ?? ''
+let runtimeEnv = {
+  openAiKey: typeof process !== 'undefined' ? process.env.OPENAI_API_KEY ?? '' : ''
 };
+
+export const env = runtimeEnv;
+
+export function setRuntimeEnv(partial: { openAiKey?: string }) {
+  runtimeEnv = {
+    ...runtimeEnv,
+    ...partial
+  };
+  env.openAiKey = runtimeEnv.openAiKey;
+}
 
 export function assertEnv() {
   if (!env.openAiKey) {
